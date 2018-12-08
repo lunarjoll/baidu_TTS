@@ -14,6 +14,7 @@ python modules require:       	baidu_aip,  timeout_decorator
 
 # Use  
 ```
+python3 baidu_TTS.py --init	# to input you APP_ID
 python3 baidu_TTS.py -i input.txt -o output.mp3
  ```   
  Note: No permit for baidu allow you for high request, So I can't trust you can input more then 50k txt. And you need log baidu when touch 200TPS(1k is 1TPS) to request allow again.
