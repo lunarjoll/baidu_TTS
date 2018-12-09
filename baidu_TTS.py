@@ -18,7 +18,7 @@ options = {
 
 def read_config():
     config = configparser.ConfigParser()
-    config.read("baidu_TTS.conf")
+    config.read(".baidu_TTS.conf")
     client = AipSpeech(config["baidu"]["APP_ID"], config["baidu"]["API_KEY"], config["baidu"]["SECRET_KEY"])
     return client
 
@@ -32,7 +32,7 @@ def create_config():
     config['baidu']['APP_ID'] = input("APP_ID=");
     config['baidu']['API_KEY'] = input("API_KEY=");
     config['baidu']['SECRET_KEY'] = input("SECRET_KEY=");
-    with open('baidu_TTS.conf', 'w') as configfile:
+    with open('.baidu_TTS.conf', 'w') as configfile:
         config.write(configfile)
         configfile.close()
 
@@ -78,7 +78,7 @@ def baidu_tts(input_file, output_file, client, options):
         i = 1
         while True :
             out_number_name=tmp_dir + '/' + str(i) + '.mp3'
-            byte_sent=f.read(512)
+            byte_sent=f.read(2048)
             if byte_sent  == "" :
                 break
             try:
